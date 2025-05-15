@@ -134,7 +134,7 @@
 
   .hero {
     min-height: 100vh;
-    background-image: url('Imagen/hero-bg.jpg'); /* asegurate que el nombre y la carpeta estén bien */
+    background-image: url('Img/hero-bg.jpg'); /* asegurate que el nombre y la carpeta estén bien */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
