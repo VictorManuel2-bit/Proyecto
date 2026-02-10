@@ -1,264 +1,254 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    height: 100%;
-  }
-  
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #f7c59f;
-    padding: 1rem 2rem;
-    position: sticky;
-    top: 0;
-  }
-  
-  .logo {
-    font-weight: bold;
-    font-size: 1.5rem;
-  }
-  
-  nav ul {
-    display: flex;
-    gap: 1rem;
-    list-style: none;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: #333;
-  }
-  
-  #menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-  }
-  
-  .productos, .nosotros, .contacto {
-    padding: 4rem 2rem;
-    max-width: 1000px;
-    margin: auto;
-  }
-  
-  .producto-lista {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-  
-  .producto img {
-    width: 100%;
-    border-radius: 8px;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-  
-  form input, form textarea {
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  form button {
-    background: #f7c59f;
-    border: none;
-    padding: 0.8rem;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 2rem;
-  }
-  
-  .redes a {
-    color: white;
-    text-decoration: none;
-    margin: 0 0.5rem;
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    nav ul {
-      display: none;
-      flex-direction: column;
-      background: #f7c59f;
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      padding: 1rem;
-      border-radius: 6px;
-    }
-  
-    nav ul.active {
-      display: flex;
-    }
-  
-    #menu-btn {
-      display: block;
-    }
-    
-    
-  }
+:root{
+  --bg1:#f7d7b6;
+  --bg2:#fff4ea;
+  --card:#ffffffcc;
+  --text:#2b1b12;
+  --muted:#6a4a3a;
+  --ring:#e7b07c;
+}
 
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .logo img {
-    height: 50px; /* o el tamaño que veas que queda bien */
-    width: auto;
-  }
-  
+*{box-sizing:border-box}
 
-  .hero {
-    min-height: 100vh;
-    background-image: url('Img/hero-bg.jpg'); /* asegurate que el nombre y la carpeta estén bien */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    padding: 20px;
-  }
-  
-  .hero::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-  }
-  
-  .hero-texto {
-    position: relative;
-    z-index: 2;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    backdrop-filter: blur(4px);
-    color: #fff;
-  }
-  
-  .hero h1 {
-    font-size: 3rem;
-    font-weight: bold;
-  }
-  
-  .hero p {
-    font-size: 1.5rem;
-  }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--text);
+  background: radial-gradient(1200px 800px at 20% 10%, var(--bg1), var(--bg2));
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px 14px;
+}
 
-  .whatsapp {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    z-index: 100;
-  }
-  
-  .whatsapp img {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    transition: transform 0.3s;
-  }
-  
-  .whatsapp img:hover {
-    transform: scale(1.1);
-  }
+.wrap{
+  width:min(520px, 100%);
+}
 
-  .contacto {
-    background-color: #fce8d5;
-    padding: 40px 20px;
-    text-align: center;
+.card{
+  background:var(--card);
+  backdrop-filter: blur(10px);
+  border:1px solid #ffffff80;
+  border-radius:22px;
+  padding:22px;
+  box-shadow: 0 20px 60px rgba(43,27,18,.15);
+}
+
+.top{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  gap:10px;
+  padding:6px 6px 14px;
+}
+
+.logo{
+  width:120px;
+  height:120px;
+  border-radius:999px;
+  background:#fff;
+  border:3px solid var(--ring);
+  overflow:hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,.12);
+}
+
+.logo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+h1{
+  font-size:22px;
+  line-height:1.15;
+  margin:0;
+}
+
+p{
+  margin:0;
+  color:var(--muted);
+  font-size:14.5px;
+  line-height:1.35;
+}
+
+.links{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:10px;
+}
+
+a.btn{
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:14px 16px;
+  border-radius:16px;
+  background:#fff;
+  border:1px solid #00000010;
+  color:var(--text);
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+  box-shadow: 0 10px 25px rgba(43,27,18,.08);
+  font-weight:650;
+}
+
+a.btn:hover{
+  transform: translateY(-1px);
+  border-color:#00000020;
+  box-shadow: 0 18px 40px rgba(43,27,18,.14);
+}
+
+.left{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+
+.title{
+  font-size:15.5px;
+}
+
+.sub{
+  font-weight:500;
+  font-size:12.5px;
+  color:var(--muted);
+}
+
+.icon{
+  width:40px;
+  height:40px;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  background: #2b1b120a;
+  border:1px solid #2b1b1210;
+  flex:0 0 auto;
+  font-size:18px;
+}
+
+.note{
+  margin-top:10px;
+  font-size:12.5px;
+  color:var(--muted);
+}
+
+.note strong{
+  color:var(--text);
+}
+
+.footer{
+  text-align:center;
+  margin-top:16px;
+  font-size:12px;
+  color:var(--muted);
+}
+
+.pill{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  background:#fff;
+  border:1px solid #00000010;
+}
+
+
+/* ===== MENU ===== */
+.menu{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  margin-top:12px;
+}
+
+.menu-section{
+  background:#fff;
+  border:1px solid #00000010;
+  border-radius:18px;
+  padding:14px 14px;
+  box-shadow: 0 10px 25px rgba(43,27,18,.06);
+}
+
+.menu-section h2{
+  margin:0 0 10px 0;
+  font-size:16px;
+}
+
+.item{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:12px;
+  padding:10px 0;
+  border-top:1px dashed #00000012;
+}
+
+.item:first-of-type{
+  border-top:none;
+  padding-top:0;
+}
+
+.name{
+  font-weight:650;
+  font-size:14.5px;
+  line-height:1.25;
+}
+
+.price{
+  font-weight:800;
+  font-size:14.5px;
+  white-space:nowrap;
+}
+
+.menu-actions{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:14px;
+}
+
+/* Botón principal */
+a.btn.primary{
+  background:#2b1b12;
+  color:#fff;
+  border:1px solid #2b1b12;
+}
+
+a.btn.primary .sub{
+  color:#ffffffcc;
+}
+
+a.btn.primary .icon{
+  background:#ffffff1a;
+  border:1px solid #ffffff25;
+}
+
+/* ===== MAPA ZONA DE ENVIOS ===== */
+.map-box{
+  width:100%;
+  overflow:hidden;
+  border-radius:18px;
+  border:1px solid #00000010;
+  box-shadow: 0 10px 25px rgba(43,27,18,.06);
+  margin-top:12px;
+}
+
+.map-box iframe{
+  width:100%;
+  height:420px;
+  border:0;
+  display:block;
+}
+
+@media (max-width: 520px){
+  .map-box iframe{
+    height:380px;
   }
-  
-  .contacto h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
-  }
-  
-  .contacto p {
-    font-size: 1.1em;
-    margin-bottom: 20px;
-  }
-  
-  .info-contacto {
-    list-style: none;
-    padding: 0;
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: left;
-  }
-  
-  .info-contacto li {
-    margin-bottom: 15px;
-    font-size: 1.1em;
-    display: flex;
-    align-items: center;
-  }
-  
-  .info-contacto i {
-    margin-right: 10px;
-    color: #d2691e; /* tono marrón pastel o pan */
-    font-size: 1.3em;
-    min-width: 25px;
-  }
-  
-  .info-contacto a {
-    color: #8b4513;
-    text-decoration: none;
-  }
-  
-  .info-contacto a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Estilos para el footer */
-  footer {
-    background-color: #e2b188;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-  }
-  
-  footer .redes a {
-    color: #fff;
-    margin: 0 5px;
-    text-decoration: none;
-  }
-  
-  footer .redes a i {
-    margin-right: 5px;
-  }
-  
-  
-  
+}
+
+
   
     
+
